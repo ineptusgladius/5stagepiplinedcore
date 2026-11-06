@@ -6,7 +6,7 @@
 `include "Writeback_Cycle.v"    
 `include "PC.v"
 `include "PC_Adder.v"
-`include "Mux.v"
+`include "Primary_Mux.v"
 `include "Instruction_Memory.v"
 `include "Control_Unit_Top.v"
 `include "Register_File.v"
