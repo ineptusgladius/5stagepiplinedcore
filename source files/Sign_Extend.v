@@ -1,9 +1,20 @@
-module Sign_Extend (In,ImmSrc,Imm_Ext);
+module Sign_Extend (In, ImmSrc, Imm_Ext);
     input [31:0] In;
     input [1:0] ImmSrc;
-    output [31:0] Imm_Ext;
+    output reg [31:0] Imm_Ext;
 
-    assign Imm_Ext =  (ImmSrc == 2'b00) ? {{20{In[31]}},In[31:20]} : 
-                     (ImmSrc == 2'b01) ? {{20{In[31]}},In[31:25],In[11:7]} : 32'h00000000; 
+    always @(*) begin
+        if (ImmSrc == 2'b00) begin
+           
+            Imm_Ext = { {20{In[31]}}, In[31:20] };
+        end 
+        else if (ImmSrc == 2'b01) begin
+            
+        end 
+        else begin
+           
+            Imm_Ext = 32'h00000000;
+        end
+    end
 
 endmodule
