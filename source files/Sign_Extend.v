@@ -9,6 +9,7 @@ module Sign_Extend (In, ImmSrc, Imm_Ext);
             Imm_Ext = { {20{In[31]}}, In[31:20] };
         end 
         else if (ImmSrc == 2'b01) begin
+            Imm_Ext = { {20{In[31]}}, In[31:25], In[11:7] };
             
         end 
         else begin
